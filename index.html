@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ori'land | Plateforme culturelle et documentaire</title>
+    <meta
+      name="description"
+      content="Ori'land est une plateforme numerique culturelle et touristique pour apprendre, documenter, decouvrir et valoriser les regions de Madagascar."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#accueil" aria-label="Ori'land accueil">
+        <img src="assets/oriland-logo.png" alt="Ori'land" />
+      </a>
+      <nav aria-label="Navigation principale">
+        <a href="#apprentissage">Apprendre</a>
+        <a href="#documentation">Documentation</a>
+        <a href="#regions">Regions</a>
+        <a href="#premium">Premium</a>
+        <a class="nav-login" href="#connexion">Espace auditeur</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="accueil">
+        <div class="hero-art" aria-hidden="true">
+          <div class="silk silk-one"></div>
+          <div class="silk silk-two"></div>
+          <div class="hero-symbol hero-ravinala"></div>
+          <div class="hero-symbol hero-zebu"></div>
+          <div class="hero-symbol hero-baobab"></div>
+          <div class="hero-symbol hero-aloalo"></div>
+        </div>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <img class="hero-logo" src="assets/oriland-logo.png" alt="Ori'land" />
+            <p class="eyebrow">Plateforme numerique culturelle et touristique</p>
+            <h1>Apprendre, documenter et decouvrir Madagascar autrement</h1>
+            <p>
+              Ori'land centralise videos, cours, cartes, archives, recits, regions,
+              traditions et savoir-faire pour rendre la culture malgache plus
+              accessible, moderne et immersive.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#apprentissage">Commencer l'apprentissage</a>
+              <a class="button secondary" href="#documentation">Explorer le centre documentaire</a>
+            </div>
+            <div class="culture-codes" aria-label="Axes Ori'land">
+              <span>Culture</span>
+              <span>Savoir-faire</span>
+              <span>Histoire</span>
+              <span>Langues regionales</span>
+              <span>Documentation</span>
+            </div>
+          </div>
+
+          <aside class="member-card" id="connexion" aria-label="Espace utilisateur">
+            <p class="eyebrow">Espace auditeur</p>
+            <h2>Connexion auditeur</h2>
+            <p>
+              Accedez aux parcours premium, aux dossiers documentaires, aux videos
+              longues et aux modules d'apprentissage.
+            </p>
+            <form class="login-form" data-login-form>
+              <label>
+                Adresse email
+                <input type="text" inputmode="email" placeholder="nom@email.com" required />
+              </label>
+              <label>
+                Mot de passe
+                <input type="password" placeholder="••••••••" required />
+              </label>
+              <button class="button primary" type="submit">Se connecter</button>
+              <span class="form-note" data-login-note>Mode prototype: aucun compte reel n'est cree.</span>
+            </form>
+          </aside>
+        </div>
+      </section>
+
+      <section class="intro-band" aria-label="Difference Ori'land">
+        <div>
+          <strong>Plateforme culturelle</strong>
+          <span>Un espace digital pour decouvrir les regions, traditions, paysages et identites malgaches.</span>
+        </div>
+        <div>
+          <strong>Centre de documentation</strong>
+          <span>Archives, videos, cartes, fiches educatives, savoir-faire, artisans et creations locales.</span>
+        </div>
+        <div>
+          <strong>Experience connectee</strong>
+          <span>Storytelling interactif, QR codes et produits inspires des identites regionales.</span>
+        </div>
+      </section>
+
+      <section class="section learning" id="apprentissage">
+        <div class="section-heading">
+          <p class="eyebrow">Modele d'apprentissage</p>
+          <h2>Culture, savoir-faire, histoire et documentation au premier plan</h2>
+          <p>
+            L'auditeur apprend d'abord les cultures, les traditions, les savoir-faire
+            et les histoires regionales, puis il approfondit avec les langues
+            regionales et les documents.
+          </p>
+        </div>
+
+        <div class="learning-shell">
+          <div class="learning-tabs" role="tablist" aria-label="Modules d'apprentissage" data-learning-tabs>
+            <button class="active" type="button" data-track="culture">Culture</button>
+            <button type="button" data-track="savoirfaire">Savoir-faire</button>
+            <button type="button" data-track="histoire">Histoire</button>
+            <button type="button" data-track="langue">Langues regionales</button>
+            <button type="button" data-track="documentation">Documentation</button>
+          </div>
+
+          <article class="learning-view" data-learning-view>
+            <span class="panel-label">Module 01</span>
+            <h3>Culture, traditions et identites</h3>
+            <p>
+              Un parcours pour decouvrir les pratiques, symboles, traditions,
+              recits et identites propres aux regions de Madagascar.
+            </p>
+            <ul>
+              <li>Video culturelle</li>
+              <li>Storytelling interactif</li>
+              <li>Fiche tradition</li>
+              <li>Dossier premium</li>
+            </ul>
+          </article>
+
+          <div class="learning-progress" aria-label="Progression exemple">
+            <article>
+              <span>Gratuit</span>
+              <strong>Decouverte</strong>
+              <p>Videos courtes, introductions regionales, recits et premieres fiches.</p>
+            </article>
+            <article>
+              <span>Premium</span>
+              <strong>Approfondir</strong>
+              <p>Dossiers complets, archives, contenus longs, quiz, audio et documents telechargeables.</p>
+            </article>
+            <article>
+              <span>Connecte</span>
+              <strong>Scanner</strong>
+              <p>Un QR code renvoie vers un parcours culturel lie a une region ou une creation.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="language-regions" aria-label="Parcours culturels par region">
+          <article>
+            <span>Hautes terres</span>
+            <h3>Culture et histoire d'Analamanga</h3>
+            <p>Collines, memoire royale, marches, architectures anciennes, recits d'origine et expressions locales.</p>
+          </article>
+          <article>
+            <span>Cote Est</span>
+            <h3>Savoir-faire du littoral</h3>
+            <p>Routes maritimes, plantes, traditions locales, artisanat, paysages humides et vocabulaire cotier.</p>
+          </article>
+          <article>
+            <span>Ouest</span>
+            <h3>Memoire et territoire de Boeny</h3>
+            <p>Baobabs, ports, paysages secs, recits de passage, symboles regionaux et archives touristiques.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section video-hub" id="videos">
+        <div class="section-heading">
+          <p class="eyebrow">Decouverte immersive</p>
+          <h2>Videos, recits et paysages pour entrer dans chaque region</h2>
+        </div>
+        <div class="video-grid">
+          <article class="video-card featured-video">
+            <div class="video-frame landscape-highlands" aria-hidden="true">
+              <span class="play-mark"></span>
+            </div>
+            <div>
+              <p class="panel-label">Episode principal</p>
+              <h3>Les hautes terres, memoire et paysages</h3>
+              <span>Une introduction visuelle aux reliefs, symboles et recits d'Analamanga.</span>
+            </div>
+          </article>
+          <article class="video-card">
+            <div class="video-frame landscape-coast" aria-hidden="true">
+              <span class="play-mark"></span>
+            </div>
+            <div>
+              <p class="panel-label">Culture</p>
+              <h3>Routes, ocean et traditions de l'est</h3>
+              <span>Un format court pour decouvrir Atsinanana par les paysages et les savoir-faire.</span>
+            </div>
+          </article>
+          <article class="video-card">
+            <div class="video-frame landscape-west" aria-hidden="true">
+              <span class="play-mark"></span>
+            </div>
+            <div>
+              <p class="panel-label">Region</p>
+              <h3>Boeny, baobab et memoire de l'ouest</h3>
+              <span>Un parcours video associe aux documents, cartes et references du centre documentaire.</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section library" id="documentation">
+        <div class="section-heading">
+          <p class="eyebrow">Centre de documentation numerique</p>
+          <h2>Centraliser les richesses culturelles et touristiques de Madagascar</h2>
+        </div>
+        <div class="library-layout">
+          <article class="feature-panel">
+            <span class="panel-label">Base de connaissances</span>
+            <h3>Archives, cartes, regions et savoir-faire</h3>
+            <p>
+              Le centre documentaire organise les contenus par region, theme culturel
+              et creation associee: documents, images, videos, cartes, recits,
+              informations touristiques, artisans et createurs.
+            </p>
+            <div class="archive-lines" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </article>
+          <div class="content-grid">
+            <article>
+              <span>01</span>
+              <h3>Contenus culturels</h3>
+              <p>Traditions locales, recits, anecdotes, elements historiques, symboles et patrimoines.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Contenus touristiques</h3>
+              <p>Paysages, lieux a decouvrir, recommandations, cartes et itineraires futurs.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Savoir-faire</h3>
+              <p>Artisanat, creations locales, presentations d'artisans et inspirations regionales.</p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>Archives premium</h3>
+              <p>Dossiers approfondis, ressources educatives, audio, documents longs et cours structures.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section ecosystem">
+        <div class="section-heading">
+          <p class="eyebrow">Ce qui differencie Ori'land</p>
+          <h2>Une combinaison entre culture, technologie, design et emotion</h2>
+        </div>
+        <div class="ecosystem-grid">
+          <article><span>01</span><h3>Plateforme numerique culturelle</h3><p>Un espace accessible sur smartphone et ordinateur pour explorer Madagascar.</p></article>
+          <article><span>02</span><h3>Centre de documentation</h3><p>Une base organisee pour consulter et transmettre les contenus culturels.</p></article>
+          <article><span>03</span><h3>Storytelling interactif</h3><p>Des parcours narratifs qui donnent du sens aux lieux, motifs et traditions.</p></article>
+          <article><span>04</span><h3>Produits connectes</h3><p>Des creations textiles et accessoires relies a des pages culturelles.</p></article>
+          <article><span>05</span><h3>QR codes intelligents</h3><p>Chaque scan ouvre un contenu precis lie a une region ou une inspiration.</p></article>
+        </div>
+      </section>
+
+      <section class="section regions" id="regions">
+        <div class="section-heading">
+          <p class="eyebrow">Valorisation des regions malgaches</p>
+          <h2>Chaque region possede ses histoires, paysages, motifs et identites</h2>
+        </div>
+        <div class="region-board" data-region-board>
+          <div class="region-tabs" role="tablist" aria-label="Regions de Madagascar">
+            <button class="active" type="button" data-region="analamanga">Analamanga</button>
+            <button type="button" data-region="atsinanana">Atsinanana</button>
+            <button type="button" data-region="boeny">Boeny</button>
+            <button type="button" data-region="anosy">Anosy</button>
+          </div>
+          <article class="region-detail" data-region-detail>
+            <div class="region-pattern" aria-hidden="true"></div>
+            <div>
+              <span class="panel-label">Region active</span>
+              <h3>Analamanga</h3>
+              <p>
+                Hautes terres, memoire royale, collines, architectures anciennes,
+                savoir-faire urbains et recits d'origine.
+              </p>
+              <dl>
+                <div><dt>Parcours</dt><dd>Culture, savoir-faire, histoire, langue</dd></div>
+                <div><dt>Contenu</dt><dd>Video, carte, fiche, archive, storytelling</dd></div>
+              </dl>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section premium" id="premium">
+        <div class="section-heading">
+          <p class="eyebrow">Acces premium</p>
+          <h2>Un espace auditeur pour approfondir l'apprentissage et la documentation</h2>
+        </div>
+        <div class="premium-grid">
+          <article class="plan-card">
+            <span>Gratuit</span>
+            <h3>Decouverte</h3>
+            <ul>
+              <li>Videos courtes</li>
+              <li>Fiches regionales</li>
+              <li>Recits introductifs</li>
+              <li>Scan QR vers contenu public</li>
+            </ul>
+          </article>
+          <article class="plan-card premium-plan">
+            <span>Premium</span>
+            <h3>Apprentissage complet</h3>
+            <ul>
+              <li>Cours culture, savoir-faire, histoire, langues regionales et documentation</li>
+              <li>Archives et dossiers approfondis</li>
+              <li>Quiz, audio et contenus longs</li>
+              <li>Parcours regionaux exclusifs</li>
+            </ul>
+          </article>
+          <article class="plan-card">
+            <span>Future evolution</span>
+            <h3>Immersion</h3>
+            <ul>
+              <li>Evenements culturels</li>
+              <li>Espaces communautaires</li>
+              <li>Galerie numerique</li>
+              <li>Collaborations touristiques</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="motif-strip" id="motifs" aria-label="Motifs culturels malgaches">
+        <div class="motif-item ravinala">
+          <span aria-hidden="true"></span>
+          <strong>Ravinala</strong>
+          <p>Feuilles rayonnantes, symbole de voyage, d'accueil et de paysage tropical.</p>
+        </div>
+        <div class="motif-item zebu">
+          <span aria-hidden="true"></span>
+          <strong>Zebu</strong>
+          <p>Courbes de cornes gravees, force, ruralite et memoire des hautes terres.</p>
+        </div>
+        <div class="motif-item baobab">
+          <span aria-hidden="true"></span>
+          <strong>Baobab</strong>
+          <p>Silhouette abstraite de l'ouest, racines, endurance et territoire.</p>
+        </div>
+        <div class="motif-item aloalo">
+          <span aria-hidden="true"></span>
+          <strong>Aloalo</strong>
+          <p>Totem stylise du sud, transforme en bordure graphique contemporaine.</p>
+        </div>
+      </section>
+
+      <section class="section connected" id="qr">
+        <div class="section-heading">
+          <p class="eyebrow">Physique vers digital</p>
+          <h2>Les creations connectees ouvrent des contenus culturels precis</h2>
+        </div>
+        <div class="connected-layout">
+          <article class="qr-card" aria-label="QR code decoratif integre au motif">
+            <div class="qr-weave">
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <p>ori.land/analamanga-hautes-terres</p>
+          </article>
+          <article class="scan-result">
+            <span class="panel-label">Apres scan</span>
+            <h3>Page culturelle associee</h3>
+            <ul>
+              <li>Video sur la region, le paysage ou le motif.</li>
+              <li>Storytelling sur l'inspiration culturelle.</li>
+              <li>Documents, cartes, references et contenus educatifs.</li>
+              <li>Lien vers un parcours premium si disponible.</li>
+            </ul>
+            <button class="button primary" type="button" data-open-story>Voir un exemple</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="section scarves" id="foulards">
+        <div class="section-heading">
+          <p class="eyebrow">Creations inspirees des identites regionales</p>
+          <h2>Les foulards deviennent des supports connectes a la plateforme</h2>
+        </div>
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="scarf-visual highlands" aria-hidden="true"><span></span></div>
+            <div class="product-copy">
+              <p>Edition 001</p>
+              <h3>Analamanga | Hautes Terres</h3>
+              <span>Reliefs centraux, trame royale, bordure de colline et QR integre.</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="scarf-visual coast" aria-hidden="true"><span></span></div>
+            <div class="product-copy">
+              <p>Edition 002</p>
+              <h3>Atsinanana | Cote Est</h3>
+              <span>Ondes oceaniques, feuillage stylise, routes maritimes et capsule documentaire.</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="scarf-visual west" aria-hidden="true"><span></span></div>
+            <div class="product-copy">
+              <p>Edition 003</p>
+              <h3>Boeny | Baobab Noir</h3>
+              <span>Baobab abstrait, soleil de l'ouest, trame archive et fiche region.</span>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="scarf-visual south" aria-hidden="true"><span></span></div>
+            <div class="product-copy">
+              <p>Edition 004</p>
+              <h3>Anosy | Aloalo Lumiere</h3>
+              <span>Bordures aloalo, lignes du vent, rouge laterite et documentation du sud-est.</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="story-drawer" data-story hidden>
+        <button type="button" aria-label="Fermer" data-close-story>x</button>
+        <p class="eyebrow">Exemple de parcours</p>
+        <h2>Hautes Terres, ligne de memoire</h2>
+        <p>
+          Le scan ouvre une video d'introduction, une fiche regionale, un lexique,
+          une carte, des reperes historiques et des documents pour continuer
+          l'apprentissage dans l'espace auditeur.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <span>Ori'land</span>
+      <p>Origin + Land: retour aux origines, aux territoires et aux identites culturelles de Madagascar.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
