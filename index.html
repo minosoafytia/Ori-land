@@ -1,450 +1,246 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ori'land | Plateforme culturelle et documentaire</title>
-    <meta
-      name="description"
-      content="Ori'land est une plateforme numerique culturelle et touristique pour apprendre, documenter, decouvrir et valoriser les regions de Madagascar."
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="#accueil" aria-label="Ori'land accueil">
-        <img src="oriland-logo.png" alt="Ori'land" />
-      </a>
-      <nav aria-label="Navigation principale">
-        <a href="#apprentissage">Apprendre</a>
-        <a href="#documentation">Documentation</a>
-        <a href="#regions">Regions</a>
-        <a href="#premium">Premium</a>
-        <a class="nav-login" href="#connexion">Espace auditeur</a>
-      </nav>
-    </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ori'land</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; background: #fafaf8; color: #2E1F15; }
+        .container { display: flex; height: 100vh; }
+        .sidebar { width: 260px; background: #2E1F15; color: #F6EDE3; padding: 2rem 1.5rem; overflow-y: auto; }
+        .sidebar h1 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; margin-bottom: 0.5rem; }
+        .sidebar p { font-size: 0.7rem; color: rgba(255,255,255,0.5); margin-bottom: 2rem; }
+        .nav { display: flex; flex-direction: column; gap: 0.5rem; }
+        .nav a { color: rgba(255,255,255,0.7); text-decoration: none; padding: 0.75rem 1rem; border-radius: 4px; cursor: pointer; }
+        .nav a:hover { background: rgba(255,255,255,0.1); color: #F6EDE3; }
+        .nav a.active { background: #C4501A; color: white; font-weight: 600; }
+        .main { flex: 1; display: flex; flex-direction: column; }
+        .topbar { background: white; padding: 1.5rem 2rem; border-bottom: 1px solid #ddd; display: flex; gap: 1rem; }
+        .topbar h2 { font-size: 1.5rem; margin: 0; }
+        .search { padding: 0.6rem 1rem; border: 1px solid #ddd; border-radius: 4px; flex: 1; max-width: 300px; }
+        .search:focus { outline: none; border-color: #C4501A; }
+        .content { flex: 1; overflow-y: auto; padding: 2rem; }
+        .page { display: none; }
+        .page.active { display: block; }
+        .hero { background: linear-gradient(135deg, #2E1F15 0%, #6B2A10 100%); color: white; padding: 3rem; border-radius: 8px; margin-bottom: 2rem; }
+        .hero h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .hero em { color: #C08020; font-style: italic; }
+        .hero p { margin-bottom: 1.5rem; color: rgba(255,255,255,0.8); }
+        .btn { padding: 0.75rem 1.5rem; border: none; border-radius: 4px; cursor: pointer; margin-right: 0.5rem; }
+        .btn-primary { background: #C4501A; color: white; }
+        .btn-primary:hover { background: #E06030; }
+        .btn-secondary { background: transparent; color: white; border: 1px solid rgba(255,255,255,0.3); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+        .card { background: white; padding: 1.5rem; border-radius: 8px; border: 1px solid #ddd; cursor: pointer; transition: all 0.2s; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
+        .card h3 { margin-bottom: 0.5rem; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+        .stat-card { background: white; padding: 1.5rem; border-radius: 8px; border: 1px solid #ddd; }
+        .stat-num { font-size: 2rem; color: #C4501A; display: block; margin-bottom: 0.5rem; }
+        .ai-panel { background: #0F2E1C; color: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; }
+        .ai-item { padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 4px; margin-bottom: 0.75rem; }
+        h2 { margin-bottom: 1.5rem; }
+        h3 { margin: 1.5rem 0 1rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h1>Ori'land</h1>
+            <p>Culture • IA • Madagascar</p>
+            <nav class="nav">
+                <a href="#" onclick="show('home')" class="nav-link active">🏠 Accueil</a>
+                <a href="#" onclick="show('explorer')" class="nav-link">🗺️ Explorer</a>
+                <a href="#" onclick="show('docs')" class="nav-link">📚 Documentation</a>
+                <a href="#" onclick="show('galerie')" class="nav-link">🎨 Galerie</a>
+                <a href="#" onclick="show('artisans')" class="nav-link">👨‍🎨 Artisans</a>
+                <a href="#" onclick="show('podcast')" class="nav-link">🎙️ Podcast</a>
+                <a href="#" onclick="show('boutique')" class="nav-link">🛍️ Boutique</a>
+                <a href="#" onclick="show('assistant')" class="nav-link">🤖 Assistant</a>
+                <a href="#" onclick="show('analytics')" class="nav-link">📊 Analytics</a>
+                <a href="#" onclick="show('profil')" class="nav-link">👤 Profil</a>
+            </nav>
+        </aside>
 
-    <main>
-      <section class="hero" id="accueil">
-        <div class="hero-art" aria-hidden="true">
-          <div class="silk silk-one"></div>
-          <div class="silk silk-two"></div>
-          <div class="hero-symbol hero-ravinala"></div>
-          <div class="hero-symbol hero-zebu"></div>
-          <div class="hero-symbol hero-baobab"></div>
-          <div class="hero-symbol hero-aloalo"></div>
-        </div>
-
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <img class="hero-logo" src="oriland-logo.png" alt="Ori'land" />
-            <p class="eyebrow">Plateforme numerique culturelle et touristique</p>
-            <h1>Apprendre, documenter et decouvrir Madagascar autrement</h1>
-            <p>
-              Ori'land centralise videos, cours, cartes, archives, recits, regions,
-              traditions et savoir-faire pour rendre la culture malgache plus
-              accessible, moderne et immersive.
-            </p>
-            <div class="hero-actions">
-              <a class="button primary" href="#apprentissage">Commencer l'apprentissage</a>
-              <a class="button secondary" href="#documentation">Explorer le centre documentaire</a>
+        <main class="main">
+            <div class="topbar">
+                <h2 id="title">Accueil</h2>
+                <input type="text" class="search" placeholder="Rechercher...">
+                <button onclick="alert('3 notifications')" style="background: none; border: none; font-size: 1.2rem; cursor: pointer;">🔔</button>
             </div>
-            <div class="culture-codes" aria-label="Axes Ori'land">
-              <span>Culture</span>
-              <span>Savoir-faire</span>
-              <span>Histoire</span>
-              <span>Langues regionales</span>
-              <span>Documentation</span>
+
+            <div class="content">
+                <!-- HOME PAGE -->
+                <div id="home" class="page active">
+                    <div class="hero">
+                        <h2>Découvrez Madagascar<br>à travers l'<em>IA</em></h2>
+                        <p>Ori'land centralise les richesses culturelles de Madagascar avec une plateforme intelligente.</p>
+                        <button class="btn btn-primary" onclick="show('explorer')">Explorer</button>
+                        <button class="btn btn-secondary" onclick="show('assistant')">Chat IA</button>
+                    </div>
+                    <h3>📊 Statistiques</h3>
+                    <div class="stats">
+                        <div class="stat-card"><span class="stat-num">22</span>Régions</div>
+                        <div class="stat-card"><span class="stat-num">247</span>Articles</div>
+                        <div class="stat-card"><span class="stat-num">8</span>Fonctionnalités IA</div>
+                        <div class="stat-card"><span class="stat-num">1,240</span>Utilisateurs</div>
+                    </div>
+                    <h3>🌍 Régions</h3>
+                    <div class="grid">
+                        <div class="card" onclick="alert('Côte Est')"><h3>🌊 Côte Est</h3><p>Traditions marines</p></div>
+                        <div class="card" onclick="alert('Imerina')"><h3>🌾 Imerina</h3><p>Royauté, riziculture</p></div>
+                        <div class="card" onclick="alert('Diego')"><h3>🌿 Diego</h3><p>Baie d'Ambaro</p></div>
+                        <div class="card" onclick="alert('Sakalava')"><h3>🐊 Sakalava</h3><p>Baobabs</p></div>
+                    </div>
+                    <h3>✦ Recommandations IA</h3>
+                    <div class="ai-panel">
+                        <div class="ai-item"><h4>🌊 Traditions côtières</h4><p>97% match</p></div>
+                        <div class="ai-item"><h4>🎭 Hira Gasy</h4><p>94% match</p></div>
+                        <div class="ai-item"><h4>🌿 Pharmacopée</h4><p>89% match</p></div>
+                        <div class="ai-item"><h4>🏺 Zafimaniry</h4><p>85% match</p></div>
+                    </div>
+                </div>
+
+                <!-- EXPLORER PAGE -->
+                <div id="explorer" class="page">
+                    <h2>Explorez les 22 régions</h2>
+                    <div class="grid">
+                        <div class="card"><h3>🌊 Côte Est</h3><p>Betsimisaraka</p></div>
+                        <div class="card"><h3>🌾 Imerina</h3><p>Hauts Plateaux</p></div>
+                        <div class="card"><h3>🌿 Diego</h3><p>Nord</p></div>
+                        <div class="card"><h3>🐊 Sakalava</h3><p>Ouest</p></div>
+                        <div class="card"><h3>🎵 Betsileo</h3><p>Centre</p></div>
+                        <div class="card"><h3>🌵 Mahafaly</h3><p>Grand Sud</p></div>
+                        <div class="card"><h3>🦎 Antanosy</h3><p>Sud-Est</p></div>
+                        <div class="card"><h3>🌺 Zafimaniry</h3><p>Est</p></div>
+                    </div>
+                </div>
+
+                <!-- DOCS PAGE -->
+                <div id="docs" class="page">
+                    <h2>247 Articles</h2>
+                    <div class="grid">
+                        <div class="card"><h3>🎭 Famadihana</h3><p>Rituel ancestral</p></div>
+                        <div class="card"><h3>🎵 Valiha</h3><p>Instrument national</p></div>
+                        <div class="card"><h3>🏰 Rova</h3><p>Palais royal</p></div>
+                        <div class="card"><h3>🌳 Baobabs</h3><p>Allée mythique</p></div>
+                        <div class="card"><h3>🎨 Zafimaniry</h3><p>UNESCO</p></div>
+                        <div class="card"><h3>🌿 Pharmacopée</h3><p>Plantes</p></div>
+                    </div>
+                </div>
+
+                <!-- GALERIE PAGE -->
+                <div id="galerie" class="page">
+                    <h2>Galerie Culturelle</h2>
+                    <div class="grid">
+                        <div class="card"><h3>🧵 Tissages</h3><p>Lamba mena</p></div>
+                        <div class="card"><h3>🗿 Sculptures</h3><p>Aloalo</p></div>
+                        <div class="card"><h3>🏺 Poteries</h3><p>Céramiques</p></div>
+                        <div class="card"><h3>💍 Bijoux</h3><p>Parures</p></div>
+                        <div class="card"><h3>🏛️ Architecture</h3><p>Maisons</p></div>
+                        <div class="card"><h3>📂 Plus</h3><p>Explorez</p></div>
+                    </div>
+                </div>
+
+                <!-- ARTISANS PAGE -->
+                <div id="artisans" class="page">
+                    <h2>Les Artisans</h2>
+                    <div class="grid">
+                        <div class="card"><h3>👨‍🎨 Tisseurs</h3><p>Lamba</p></div>
+                        <div class="card"><h3>🔧 Sculpteurs</h3><p>Bois</p></div>
+                        <div class="card"><h3>🏺 Potiers</h3><p>Céramique</p></div>
+                        <div class="card"><h3>⚒️ Forgerons</h3><p>Fer</p></div>
+                        <div class="card"><h3>🌳 Bûcherons</h3><p>Bois</p></div>
+                        <div class="card"><h3>📍 Carte</h3><p>Localisation</p></div>
+                    </div>
+                </div>
+
+                <!-- PODCAST PAGE -->
+                <div id="podcast" class="page">
+                    <h2>🎙️ Podcast IA</h2>
+                    <div class="grid">
+                        <div class="card"><h3>Ep.1 - Famadihana</h3><p>25 min</p></div>
+                        <div class="card"><h3>Ep.2 - Valiha</h3><p>18 min</p></div>
+                        <div class="card"><h3>Ep.3 - Nord</h3><p>22 min</p></div>
+                        <div class="card"><h3>Ep.4 - Zafimaniry</h3><p>20 min</p></div>
+                    </div>
+                </div>
+
+                <!-- BOUTIQUE PAGE -->
+                <div id="boutique" class="page">
+                    <h2>🛍️ Boutique Foulards</h2>
+                    <div class="grid">
+                        <div class="card"><h3>🌊 Côte Est</h3><p>45,000 Ar</p></div>
+                        <div class="card"><h3>🌾 Imerina</h3><p>55,000 Ar</p></div>
+                        <div class="card"><h3>🐊 Sakalava</h3><p>40,000 Ar</p></div>
+                        <div class="card"><h3>👑 Premium</h3><p>85,000 Ar</p></div>
+                        <div class="card"><h3>⭐ Limited</h3><p>120,000 Ar</p></div>
+                        <div class="card"><h3>🛒 Panier</h3><p>0 articles</p></div>
+                    </div>
+                </div>
+
+                <!-- ASSISTANT PAGE -->
+                <div id="assistant" class="page">
+                    <h2>🤖 Assistant IA</h2>
+                    <div class="ai-panel">
+                        <h3>Guide IA</h3>
+                        <p>Bonjour ! Je suis votre assistant culturel. Comment puis-je vous aider ?</p>
+                        <input type="text" placeholder="Posez une question..." style="width: 100%; padding: 0.75rem; margin: 1rem 0; border: 1px solid #ddd; border-radius: 4px;">
+                        <button class="btn btn-primary" onclick="alert('Famadihana')">Famadihana</button>
+                        <button class="btn btn-primary" onclick="alert('Cultures marines')">Cultures</button>
+                        <button class="btn btn-primary" onclick="alert('Artisanat')">Artisanat</button>
+                    </div>
+                </div>
+
+                <!-- ANALYTICS PAGE -->
+                <div id="analytics" class="page">
+                    <h2>📊 Analytics</h2>
+                    <div class="grid">
+                        <div class="card"><h3>Régions</h3><p>Imerina 34% • Côte Est 28%</p></div>
+                        <div class="card"><h3>Sessions IA</h3><p>Total: 24 • Semaine: 8</p></div>
+                        <div class="card"><h3>Articles favoris</h3><p>Famadihana • Zafimaniry</p></div>
+                        <div class="card"><h3>Recommandations</h3><p>Pertinence: 92%</p></div>
+                    </div>
+                </div>
+
+                <!-- PROFIL PAGE -->
+                <div id="profil" class="page">
+                    <h2>👤 Mon Profil</h2>
+                    <div class="grid">
+                        <div class="card"><h3>📈 Activité</h3><p>Articles: 47 • Régions: 12</p></div>
+                        <div class="card"><h3>💾 Préférences</h3><p>Langue: Français • Région: Imerina</p></div>
+                        <div class="card"><h3>✦ Insights</h3><p>Intérêt pour rituels et musique</p></div>
+                        <div class="card"><h3>🎁 Badges</h3><p>Explorateur: 12 régions</p></div>
+                    </div>
+                </div>
             </div>
-          </div>
+        </main>
+    </div>
 
-          <aside class="member-card" id="connexion" aria-label="Espace utilisateur">
-            <p class="eyebrow">Espace auditeur</p>
-            <h2>Connexion auditeur</h2>
-            <p>
-              Accedez aux parcours premium, aux dossiers documentaires, aux videos
-              longues et aux modules d'apprentissage.
-            </p>
-            <form class="login-form" data-login-form>
-              <label>
-                Adresse email
-                <input type="text" inputmode="email" placeholder="nom@email.com" required />
-              </label>
-              <label>
-                Mot de passe
-                <input type="password" placeholder="••••••••" required />
-              </label>
-              <button class="button primary" type="submit">Se connecter</button>
-              <span class="form-note" data-login-note>Mode prototype: aucun compte reel n'est cree.</span>
-            </form>
-          </aside>
-        </div>
-      </section>
-
-      <section class="intro-band" aria-label="Difference Ori'land">
-        <div>
-          <strong>Plateforme culturelle</strong>
-          <span>Un espace digital pour decouvrir les regions, traditions, paysages et identites malgaches.</span>
-        </div>
-        <div>
-          <strong>Centre de documentation</strong>
-          <span>Archives, videos, cartes, fiches educatives, savoir-faire, artisans et creations locales.</span>
-        </div>
-        <div>
-          <strong>Experience connectee</strong>
-          <span>Storytelling interactif, QR codes et produits inspires des identites regionales.</span>
-        </div>
-      </section>
-
-      <section class="section learning" id="apprentissage">
-        <div class="section-heading">
-          <p class="eyebrow">Modele d'apprentissage</p>
-          <h2>Culture, savoir-faire, histoire et documentation au premier plan</h2>
-          <p>
-            L'auditeur apprend d'abord les cultures, les traditions, les savoir-faire
-            et les histoires regionales, puis il approfondit avec les langues
-            regionales et les documents.
-          </p>
-        </div>
-
-        <div class="learning-shell">
-          <div class="learning-tabs" role="tablist" aria-label="Modules d'apprentissage" data-learning-tabs>
-            <button class="active" type="button" data-track="culture">Culture</button>
-            <button type="button" data-track="savoirfaire">Savoir-faire</button>
-            <button type="button" data-track="histoire">Histoire</button>
-            <button type="button" data-track="langue">Langues regionales</button>
-            <button type="button" data-track="documentation">Documentation</button>
-          </div>
-
-          <article class="learning-view" data-learning-view>
-            <span class="panel-label">Module 01</span>
-            <h3>Culture, traditions et identites</h3>
-            <p>
-              Un parcours pour decouvrir les pratiques, symboles, traditions,
-              recits et identites propres aux regions de Madagascar.
-            </p>
-            <ul>
-              <li>Video culturelle</li>
-              <li>Storytelling interactif</li>
-              <li>Fiche tradition</li>
-              <li>Dossier premium</li>
-            </ul>
-          </article>
-
-          <div class="learning-progress" aria-label="Progression exemple">
-            <article>
-              <span>Gratuit</span>
-              <strong>Decouverte</strong>
-              <p>Videos courtes, introductions regionales, recits et premieres fiches.</p>
-            </article>
-            <article>
-              <span>Premium</span>
-              <strong>Approfondir</strong>
-              <p>Dossiers complets, archives, contenus longs, quiz, audio et documents telechargeables.</p>
-            </article>
-            <article>
-              <span>Connecte</span>
-              <strong>Scanner</strong>
-              <p>Un QR code renvoie vers un parcours culturel lie a une region ou une creation.</p>
-            </article>
-          </div>
-        </div>
-
-        <div class="language-regions" aria-label="Parcours culturels par region">
-          <article>
-            <span>Hautes terres</span>
-            <h3>Culture et histoire d'Analamanga</h3>
-            <p>Collines, memoire royale, marches, architectures anciennes, recits d'origine et expressions locales.</p>
-          </article>
-          <article>
-            <span>Cote Est</span>
-            <h3>Savoir-faire du littoral</h3>
-            <p>Routes maritimes, plantes, traditions locales, artisanat, paysages humides et vocabulaire cotier.</p>
-          </article>
-          <article>
-            <span>Ouest</span>
-            <h3>Memoire et territoire de Boeny</h3>
-            <p>Baobabs, ports, paysages secs, recits de passage, symboles regionaux et archives touristiques.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section video-hub" id="videos">
-        <div class="section-heading">
-          <p class="eyebrow">Decouverte immersive</p>
-          <h2>Videos, recits et paysages pour entrer dans chaque region</h2>
-        </div>
-        <div class="video-grid">
-          <article class="video-card featured-video">
-            <div class="video-frame landscape-highlands" aria-hidden="true">
-              <span class="play-mark"></span>
-            </div>
-            <div>
-              <p class="panel-label">Episode principal</p>
-              <h3>Les hautes terres, memoire et paysages</h3>
-              <span>Une introduction visuelle aux reliefs, symboles et recits d'Analamanga.</span>
-            </div>
-          </article>
-          <article class="video-card">
-            <div class="video-frame landscape-coast" aria-hidden="true">
-              <span class="play-mark"></span>
-            </div>
-            <div>
-              <p class="panel-label">Culture</p>
-              <h3>Routes, ocean et traditions de l'est</h3>
-              <span>Un format court pour decouvrir Atsinanana par les paysages et les savoir-faire.</span>
-            </div>
-          </article>
-          <article class="video-card">
-            <div class="video-frame landscape-west" aria-hidden="true">
-              <span class="play-mark"></span>
-            </div>
-            <div>
-              <p class="panel-label">Region</p>
-              <h3>Boeny, baobab et memoire de l'ouest</h3>
-              <span>Un parcours video associe aux documents, cartes et references du centre documentaire.</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section library" id="documentation">
-        <div class="section-heading">
-          <p class="eyebrow">Centre de documentation numerique</p>
-          <h2>Centraliser les richesses culturelles et touristiques de Madagascar</h2>
-        </div>
-        <div class="library-layout">
-          <article class="feature-panel">
-            <span class="panel-label">Base de connaissances</span>
-            <h3>Archives, cartes, regions et savoir-faire</h3>
-            <p>
-              Le centre documentaire organise les contenus par region, theme culturel
-              et creation associee: documents, images, videos, cartes, recits,
-              informations touristiques, artisans et createurs.
-            </p>
-            <div class="archive-lines" aria-hidden="true">
-              <span></span><span></span><span></span><span></span>
-            </div>
-          </article>
-          <div class="content-grid">
-            <article>
-              <span>01</span>
-              <h3>Contenus culturels</h3>
-              <p>Traditions locales, recits, anecdotes, elements historiques, symboles et patrimoines.</p>
-            </article>
-            <article>
-              <span>02</span>
-              <h3>Contenus touristiques</h3>
-              <p>Paysages, lieux a decouvrir, recommandations, cartes et itineraires futurs.</p>
-            </article>
-            <article>
-              <span>03</span>
-              <h3>Savoir-faire</h3>
-              <p>Artisanat, creations locales, presentations d'artisans et inspirations regionales.</p>
-            </article>
-            <article>
-              <span>04</span>
-              <h3>Archives premium</h3>
-              <p>Dossiers approfondis, ressources educatives, audio, documents longs et cours structures.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section ecosystem">
-        <div class="section-heading">
-          <p class="eyebrow">Ce qui differencie Ori'land</p>
-          <h2>Une combinaison entre culture, technologie, design et emotion</h2>
-        </div>
-        <div class="ecosystem-grid">
-          <article><span>01</span><h3>Plateforme numerique culturelle</h3><p>Un espace accessible sur smartphone et ordinateur pour explorer Madagascar.</p></article>
-          <article><span>02</span><h3>Centre de documentation</h3><p>Une base organisee pour consulter et transmettre les contenus culturels.</p></article>
-          <article><span>03</span><h3>Storytelling interactif</h3><p>Des parcours narratifs qui donnent du sens aux lieux, motifs et traditions.</p></article>
-          <article><span>04</span><h3>Produits connectes</h3><p>Des creations textiles et accessoires relies a des pages culturelles.</p></article>
-          <article><span>05</span><h3>QR codes intelligents</h3><p>Chaque scan ouvre un contenu precis lie a une region ou une inspiration.</p></article>
-        </div>
-      </section>
-
-      <section class="section regions" id="regions">
-        <div class="section-heading">
-          <p class="eyebrow">Valorisation des regions malgaches</p>
-          <h2>Chaque region possede ses histoires, paysages, motifs et identites</h2>
-        </div>
-        <div class="region-board" data-region-board>
-          <div class="region-tabs" role="tablist" aria-label="Regions de Madagascar">
-            <button class="active" type="button" data-region="analamanga">Analamanga</button>
-            <button type="button" data-region="atsinanana">Atsinanana</button>
-            <button type="button" data-region="boeny">Boeny</button>
-            <button type="button" data-region="anosy">Anosy</button>
-          </div>
-          <article class="region-detail" data-region-detail>
-            <div class="region-pattern" aria-hidden="true"></div>
-            <div>
-              <span class="panel-label">Region active</span>
-              <h3>Analamanga</h3>
-              <p>
-                Hautes terres, memoire royale, collines, architectures anciennes,
-                savoir-faire urbains et recits d'origine.
-              </p>
-              <dl>
-                <div><dt>Parcours</dt><dd>Culture, savoir-faire, histoire, langue</dd></div>
-                <div><dt>Contenu</dt><dd>Video, carte, fiche, archive, storytelling</dd></div>
-              </dl>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section premium" id="premium">
-        <div class="section-heading">
-          <p class="eyebrow">Acces premium</p>
-          <h2>Un espace auditeur pour approfondir l'apprentissage et la documentation</h2>
-        </div>
-        <div class="premium-grid">
-          <article class="plan-card">
-            <span>Gratuit</span>
-            <h3>Decouverte</h3>
-            <ul>
-              <li>Videos courtes</li>
-              <li>Fiches regionales</li>
-              <li>Recits introductifs</li>
-              <li>Scan QR vers contenu public</li>
-            </ul>
-          </article>
-          <article class="plan-card premium-plan">
-            <span>Premium</span>
-            <h3>Apprentissage complet</h3>
-            <ul>
-              <li>Cours culture, savoir-faire, histoire, langues regionales et documentation</li>
-              <li>Archives et dossiers approfondis</li>
-              <li>Quiz, audio et contenus longs</li>
-              <li>Parcours regionaux exclusifs</li>
-            </ul>
-          </article>
-          <article class="plan-card">
-            <span>Future evolution</span>
-            <h3>Immersion</h3>
-            <ul>
-              <li>Evenements culturels</li>
-              <li>Espaces communautaires</li>
-              <li>Galerie numerique</li>
-              <li>Collaborations touristiques</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="motif-strip" id="motifs" aria-label="Motifs culturels malgaches">
-        <div class="motif-item ravinala">
-          <span aria-hidden="true"></span>
-          <strong>Ravinala</strong>
-          <p>Feuilles rayonnantes, symbole de voyage, d'accueil et de paysage tropical.</p>
-        </div>
-        <div class="motif-item zebu">
-          <span aria-hidden="true"></span>
-          <strong>Zebu</strong>
-          <p>Courbes de cornes gravees, force, ruralite et memoire des hautes terres.</p>
-        </div>
-        <div class="motif-item baobab">
-          <span aria-hidden="true"></span>
-          <strong>Baobab</strong>
-          <p>Silhouette abstraite de l'ouest, racines, endurance et territoire.</p>
-        </div>
-        <div class="motif-item aloalo">
-          <span aria-hidden="true"></span>
-          <strong>Aloalo</strong>
-          <p>Totem stylise du sud, transforme en bordure graphique contemporaine.</p>
-        </div>
-      </section>
-
-      <section class="section connected" id="qr">
-        <div class="section-heading">
-          <p class="eyebrow">Physique vers digital</p>
-          <h2>Les creations connectees ouvrent des contenus culturels precis</h2>
-        </div>
-        <div class="connected-layout">
-          <article class="qr-card" aria-label="QR code decoratif integre au motif">
-            <div class="qr-weave">
-              <span></span><span></span><span></span><span></span><span></span>
-              <span></span><span></span><span></span><span></span><span></span>
-              <span></span><span></span><span></span><span></span><span></span>
-              <span></span><span></span><span></span><span></span><span></span>
-              <span></span><span></span><span></span><span></span><span></span>
-            </div>
-            <p>ori.land/analamanga-hautes-terres</p>
-          </article>
-          <article class="scan-result">
-            <span class="panel-label">Apres scan</span>
-            <h3>Page culturelle associee</h3>
-            <ul>
-              <li>Video sur la region, le paysage ou le motif.</li>
-              <li>Storytelling sur l'inspiration culturelle.</li>
-              <li>Documents, cartes, references et contenus educatifs.</li>
-              <li>Lien vers un parcours premium si disponible.</li>
-            </ul>
-            <button class="button primary" type="button" data-open-story>Voir un exemple</button>
-          </article>
-        </div>
-      </section>
-
-      <section class="section scarves" id="foulards">
-        <div class="section-heading">
-          <p class="eyebrow">Creations inspirees des identites regionales</p>
-          <h2>Les foulards deviennent des supports connectes a la plateforme</h2>
-        </div>
-        <div class="product-grid">
-          <article class="product-card">
-            <div class="scarf-visual highlands" aria-hidden="true"><span></span></div>
-            <div class="product-copy">
-              <p>Edition 001</p>
-              <h3>Analamanga | Hautes Terres</h3>
-              <span>Reliefs centraux, trame royale, bordure de colline et QR integre.</span>
-            </div>
-          </article>
-          <article class="product-card">
-            <div class="scarf-visual coast" aria-hidden="true"><span></span></div>
-            <div class="product-copy">
-              <p>Edition 002</p>
-              <h3>Atsinanana | Cote Est</h3>
-              <span>Ondes oceaniques, feuillage stylise, routes maritimes et capsule documentaire.</span>
-            </div>
-          </article>
-          <article class="product-card">
-            <div class="scarf-visual west" aria-hidden="true"><span></span></div>
-            <div class="product-copy">
-              <p>Edition 003</p>
-              <h3>Boeny | Baobab Noir</h3>
-              <span>Baobab abstrait, soleil de l'ouest, trame archive et fiche region.</span>
-            </div>
-          </article>
-          <article class="product-card">
-            <div class="scarf-visual south" aria-hidden="true"><span></span></div>
-            <div class="product-copy">
-              <p>Edition 004</p>
-              <h3>Anosy | Aloalo Lumiere</h3>
-              <span>Bordures aloalo, lignes du vent, rouge laterite et documentation du sud-est.</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="story-drawer" data-story hidden>
-        <button type="button" aria-label="Fermer" data-close-story>x</button>
-        <p class="eyebrow">Exemple de parcours</p>
-        <h2>Hautes Terres, ligne de memoire</h2>
-        <p>
-          Le scan ouvre une video d'introduction, une fiche regionale, un lexique,
-          une carte, des reperes historiques et des documents pour continuer
-          l'apprentissage dans l'espace auditeur.
-        </p>
-      </section>
-    </main>
-
-    <footer>
-      <span>Ori'land</span>
-      <p>Origin + Land: retour aux origines, aux territoires et aux identites culturelles de Madagascar.</p>
-    </footer>
-
-    <script src="script.js"></script>
-  </body>
+    <script>
+        function show(page) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(page).classList.add('active');
+            
+            const titles = {
+                home: 'Accueil',
+                explorer: 'Explorer',
+                docs: 'Documentation',
+                galerie: 'Galerie',
+                artisans: 'Artisans',
+                podcast: 'Podcast',
+                boutique: 'Boutique',
+                assistant: 'Assistant IA',
+                analytics: 'Analytics',
+                profil: 'Profil'
+            };
+            document.getElementById('title').textContent = titles[page] || 'Ori\'land';
+            
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
 </html>
