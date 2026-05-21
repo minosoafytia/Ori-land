@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Ori'land — Plateforme culturelle augmentée par l'IA</title>
-<meta name="description" content="Ori'land centralise, documente et valorise les richesses culturelles de Madagascar grâce à l'IA et la data : 22 régions, archives, foulards QR." />
+<title>Ori'land - IA culturelle</title>
+<meta name="description" content="Ori'land est une experience de decouverte culturelle augmentee par l'IA, la data, le centre de documentation et les parcours d'apprentissage." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -12,163 +12,192 @@
 </head>
 <body>
 
-<main class="container" style="padding-top:32px;padding-bottom:32px">
-
-  <!-- TOPBAR -->
+<main class="container">
   <div class="topbar">
     <div>
-      <div class="kicker">Mpianatra · Accueil</div>
-      <h1>Plateforme Ori'land</h1>
+      <div class="kicker">Accueil</div>
+      <h1>Ori'land <span class="origin-mark">Intelligence culturelle</span></h1>
     </div>
-    <div style="display:flex;gap:8px;align-items:center">
+    <div class="top-actions">
       <div class="search">
-        <span>🔍</span>
-        <input placeholder="Rechercher région, motif, récit…" />
-        <small style="color:var(--emerald);font-size:10px">✨ IA</small>
+        <span>Search</span>
+        <input data-semantic-search placeholder="Rechercher region, motif, recit..." />
+        <small class="ai-mark">IA</small>
       </div>
-      <button class="icon-btn">🔔</button>
-      <button class="icon-btn">☀️</button>
+      <button class="icon-btn" onclick="showToast('Notifications IA ouvertes')">N</button>
+      <button class="icon-btn" onclick="showToast('Mode clair actif')">S</button>
     </div>
   </div>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="glow"></div>
     <span class="watermark">ORILAND</span>
     <div class="hero-inner">
-      <div class="badge"><span class="dot"></span> IA culturelle active · Madagascar</div>
-      <h2>Découvrez Madagascar<br/>à travers <em>l'intelligence artificielle</em></h2>
-      <p>Ori'land centralise, documente et valorise les richesses culturelles de Madagascar. L'IA personnalise votre parcours, traduit les dialectes régionaux et vous guide à travers 22 régions et leurs patrimoines.</p>
+      <div class="badge"><span class="dot"></span> IA culturelle active</div>
+      <h2>Decouvrir une culture autrement, grace a une <em>IA culturelle</em>.</h2>
+      <p>Ori'land est une experience de transmission culturelle augmentee. L'IA guide l'utilisateur, recommande des parcours, explique les histoires, aide a apprendre les langues regionales, organise le centre de documentation et transforme les donnees en nouvelles facons d'explorer.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="regions.html">Explorer les régions</a>
-        <a class="btn btn-ghost" href="#assistant">Parler à l'IA</a>
+        <a class="btn btn-primary" href="#assistant">Parler a l'IA</a>
+        <a class="btn btn-ghost" href="bibliotheque.html">Centre de documentation</a>
+        <a class="btn btn-ghost" href="auditeurs.html">Espace auditeur</a>
       </div>
     </div>
   </section>
 
-  <!-- STATS -->
-  <section class="stats">
-    <div class="stat"><span class="n">22</span><span class="l">Régions documentées</span><div class="d">↗ 3 nouvelles ce mois</div></div>
-    <div class="stat"><span class="n">247</span><span class="l">Articles & archives</span><div class="d">↗ 12 cette semaine</div></div>
-    <div class="stat"><span class="n ai">8</span><span class="l">Fonctionnalités IA actives</span><div class="d">↗ Toutes opérationnelles</div></div>
-    <div class="stat"><span class="n">1 240</span><span class="l">Utilisateurs actifs</span><div class="d">↗ +18% ce mois</div></div>
+  <section class="stats elevated">
+    <div class="stat"><span class="n">360°</span><span class="l">Decouverte culturelle</span><div class="d">IA, data, audio, langues</div></div>
+    <div class="stat"><span class="n ai">8</span><span class="l">Modules IA actifs</span><div class="d">Recherche, design, traduction</div></div>
+    <div class="stat"><span class="n">6</span><span class="l">Parcours d'apprentissage</span><div class="d">Langues, histoire, documentation</div></div>
+    <div class="stat"><span class="n">92%</span><span class="l">Recommandations utiles</span><div class="d">Profil auditeur</div></div>
   </section>
 
-  <!-- REGIONS + AI PANEL -->
+  <section class="experience-showcase">
+    <div class="showcase-copy">
+      <div class="kicker">Le concept fondamental</div>
+      <h3>Explorer, comprendre et transmettre la culture avec l'IA.</h3>
+      <p>L'IA devient le moteur de la plateforme: elle cherche dans la documentation, traduit, resume, cree des parcours, anticipe les centres d'interet et rend la culture plus accessible. Les creations physiques peuvent prolonger l'experience, mais le coeur reste la decouverte intelligente.</p>
+      <div class="design-tabs">
+        <span>Assistant culturel</span>
+        <span>Documentation IA</span>
+        <span>Langues regionales</span>
+        <span>Parcours immersifs</span>
+      </div>
+    </div>
+    <div class="ai-orbit" aria-label="Schema IA Ori'land">
+      <div class="orbit-core">IA</div>
+      <span class="orbit-node node-a">Culture</span>
+      <span class="orbit-node node-b">Savoirs</span>
+      <span class="orbit-node node-c">Data</span>
+      <span class="orbit-node node-d">Docs</span>
+      <span class="orbit-ring ring-one"></span>
+      <span class="orbit-ring ring-two"></span>
+    </div>
+  </section>
+
   <section class="grid-3">
     <div>
-      <div class="section-title"><h3>Régions à découvrir</h3><a href="regions.html">Voir toutes →</a></div>
+      <div class="section-title"><h3>Parcours a apprendre</h3><a href="regions.html">Voir toutes</a></div>
       <div class="regions">
         <a class="region" href="regions.html">
-          <div class="cover" style="background:linear-gradient(135deg,#1A4A6B,#0F2E1C)"><span class="tag">IA</span>🌊</div>
-          <div class="info"><h4>Côte Est — Betsimisaraka</h4><p>Traditions marines · Salegy</p></div>
+          <div class="cover" style="background:linear-gradient(135deg,#1A4A6B,#0F2E1C)"><span class="tag">IA</span>Cote</div>
+          <div class="info"><h4>Langues regionales</h4><p>Expressions, prononciation, lexique utile</p></div>
         </a>
         <a class="region" href="regions.html">
-          <div class="cover" style="background:linear-gradient(135deg,#4A2A0A,#8B5A1A)"><span class="tag">IA</span>🌾</div>
-          <div class="info"><h4>Hauts Plateaux — Merina</h4><p>Royauté Imerina · Riz</p></div>
+          <div class="cover" style="background:linear-gradient(135deg,#4A2A0A,#8B5A1A)"><span class="tag">IA</span>Plateaux</div>
+          <div class="info"><h4>Histoire & memoire</h4><p>Recits, lieux, personnages, chronologies</p></div>
         </a>
         <a class="region" href="regions.html">
-          <div class="cover" style="background:linear-gradient(135deg,#1A3B0F,#2E5A1A)"><span class="tag">IA</span>🌿</div>
-          <div class="info"><h4>Nord — Diego Suarez</h4><p>Antankarana · Ambaro</p></div>
+          <div class="cover" style="background:linear-gradient(135deg,#1A3B0F,#2E5A1A)"><span class="tag">IA</span>Foret</div>
+          <div class="info"><h4>Savoir-faire & motifs</h4><p>Textile, formes, couleurs, symboles</p></div>
         </a>
       </div>
 
-      <div class="section-title" style="margin-top:32px"><h3>Contenus récents</h3><a href="bibliotheque.html">Tout voir →</a></div>
+      <div class="section-title" style="margin-top:32px"><h3>Centre de documentation</h3><a href="bibliotheque.html">Acceder aux ressources</a></div>
       <div class="docs">
-        <a class="doc" href="bibliotheque.html"><div class="icon">📜</div><div class="body"><h5>Le Famadihana — Rituel de retournement des morts</h5><div class="meta">Hauts Plateaux · Lu 1 430 fois</div></div><span class="chip clay">Culture</span></a>
-        <a class="doc" href="bibliotheque.html"><div class="icon">🎵</div><div class="body"><h5>Instruments traditionnels — Valiha & Kabosy</h5><div class="meta">National · Lu 892 fois</div></div><span class="chip emerald">Art</span></a>
-        <a class="doc" href="bibliotheque.html"><div class="icon">🏰</div><div class="body"><h5>Rova d'Antananarivo — Histoire du palais royal</h5><div class="meta">Imerina · Lu 2 100 fois</div></div><span class="chip ochre">Histoire</span></a>
-        <a class="doc" href="bibliotheque.html"><div class="icon">🧵</div><div class="body"><h5>Art Zafimaniry — Patrimoine immatériel UNESCO</h5><div class="meta">Sud-Est · Lu 1 087 fois</div></div><span class="chip emerald">Art</span></a>
+        <a class="doc" href="bibliotheque.html"><div class="icon">L1</div><div class="body"><h5>Apprendre les langues de chaque region</h5><div class="meta">Lexique, audio, prononciation, phrases utiles</div></div><span class="chip clay">Langues</span></a>
+        <a class="doc" href="bibliotheque.html"><div class="icon">H1</div><div class="body"><h5>Apprendre l'histoire et les origines</h5><div class="meta">Chronologies, lieux, figures, resumes IA</div></div><span class="chip ochre">Histoire</span></a>
+        <a class="doc" href="bibliotheque.html"><div class="icon">R1</div><div class="body"><h5>Acceder aux ressources documentaires</h5><div class="meta">Textes, audios, fiches pedagogiques, dossiers IA</div></div><span class="chip emerald">Ressources</span></a>
+        <a class="doc" href="bibliotheque.html"><div class="icon">IA</div><div class="body"><h5>Explorer avec un guide intelligent</h5><div class="meta">Questions libres, recommandations, contenus lies</div></div><span class="chip emerald">IA</span></a>
       </div>
     </div>
 
     <aside>
-      <div class="section-title"><h3>✨ Recommandations IA</h3><a href="#assistant">Voir l'IA →</a></div>
+      <div class="section-title"><h3>Recommandations IA</h3><a href="#assistant">Ouvrir l'IA</a></div>
       <div class="ai-panel">
         <div class="glow"></div>
-        <div class="ai-head">🤖 <h4>Guide IA personnel</h4><small>Pour vous</small></div>
-        <div class="reco"><div class="em">🌊</div><div class="b"><h5>Traditions côtières Betsimisaraka</h5><p>Basé sur vos lectures récentes</p></div><div class="score">97%</div></div>
-        <div class="reco"><div class="em">🎭</div><div class="b"><h5>Hira Gasy — Théâtre populaire</h5><p>Correspond à vos intérêts musicaux</p></div><div class="score">94%</div></div>
-        <div class="reco"><div class="em">🌿</div><div class="b"><h5>Pharmacopée traditionnelle du Sud</h5><p>Nouveau contenu · Tendance</p></div><div class="score">89%</div></div>
-        <div class="reco"><div class="em">🏺</div><div class="b"><h5>Artisanat Zafimaniry — UNESCO</h5><p>Classé patrimoine immatériel</p></div><div class="score">85%</div></div>
+        <div class="ai-head"><div class="avatar">IA</div><h4>Guide personnel</h4><small>Pour vous</small></div>
+        <div class="reco"><div class="em">96</div><div class="b"><h5>Parcours IA mer chaude</h5><p>Ressources, audio et histoire associes</p></div><div class="score">97%</div></div>
+        <div class="reco"><div class="em">88</div><div class="b"><h5>Apprendre une langue regionale</h5><p>Parcours court avec prononciation</p></div><div class="score">94%</div></div>
+        <div class="reco"><div class="em">81</div><div class="b"><h5>Comprendre un motif</h5><p>Ressources visuelles et contexte</p></div><div class="score">89%</div></div>
+        <div class="reco"><div class="em">74</div><div class="b"><h5>Histoire simplifiee</h5><p>Version claire pour auditeurs</p></div><div class="score">85%</div></div>
       </div>
       <div class="mini-caps">
-        <div class="mini-cap"><span class="ico">🌐</span> Traduction dialectes</div>
-        <div class="mini-cap"><span class="ico">🧭</span> Parcours sur-mesure</div>
-        <div class="mini-cap"><span class="ico">✍️</span> Récits générés</div>
-        <div class="mini-cap"><span class="ico">📊</span> Tendances data</div>
+        <div class="mini-cap"><span class="ico">LG</span> Apprentissage langues</div>
+        <div class="mini-cap"><span class="ico">PX</span> Parcours sur mesure</div>
+        <div class="mini-cap"><span class="ico">ST</span> Storytelling culturel</div>
+        <div class="mini-cap"><span class="ico">RS</span> Ressources archivees</div>
       </div>
     </aside>
   </section>
 
-  <!-- ASSISTANT IA + DATA -->
   <section id="assistant" class="chat-grid">
     <div class="chat">
       <div class="chat-head">
-        <div class="avatar">🤖</div>
-        <div><h4>Assistant Ori'land</h4><p>IA culturelle · Multilingue · Contextuelle</p></div>
-        <div class="lang"><span>FR</span><span>MG</span><span>EN</span></div>
+        <div class="avatar">IA</div>
+        <div><h4>Assistant Ori'land</h4><p>Langues, histoire, centre de documentation et recommandations</p></div>
+        <div class="lang"><span>FR</span><span>EN</span><span>VO</span></div>
       </div>
       <div class="chat-body" id="chat-body">
-        <div class="msg user"><div class="av">👤</div><div class="bubble">Une culture aux inspirations marines, avec couleurs chaudes ?</div></div>
+        <div class="msg user"><div class="av">U</div><div class="bubble">Je veux decouvrir une culture avec inspirations marines et couleurs chaudes.</div></div>
         <div class="msg bot">
-          <div class="av">🤖</div>
+          <div class="av">IA</div>
           <div>
-            <div class="bubble">Direction <strong>Vezo (Sud-Ouest)</strong> 🌊 — pirogues, coraux, terres ocres. Je propose le foulard <em>Lakana</em>, 3 récits régionaux et un parcours immersif de 12 min.</div>
+            <div class="bubble">Je recommande un parcours IA: histoire courte, lexique regional, guide audio, ressources documentaires et suggestions visuelles associees.</div>
             <div class="suggest">
-              <button>Foulard Lakana</button>
-              <button>Vezo</button>
-              <button>Récit audio</button>
-              <button>Parcours 12 min</button>
+              <button>Voir le parcours</button>
+              <button>Apprendre la langue</button>
+              <button>Acceder aux ressources</button>
+              <button>Voir data tendances</button>
             </div>
           </div>
         </div>
       </div>
       <div class="chat-foot">
-        ✨ <input id="chat-input" placeholder="Demande à l'IA culturelle…" />
-        <button class="send">➤</button>
+        <span>IA</span><input id="chat-input" placeholder="Demandez a l'assistant culturel..." />
+        <button class="send">Go</button>
       </div>
     </div>
 
     <div class="data">
-      <div class="data-head">📊 <h4>Data intelligence</h4><small>● Live</small></div>
-      <div class="metric"><div><div class="k">Motifs scannés</div><div class="v">12 480</div></div><div class="d">↗ +34%</div></div>
-      <div class="metric"><div><div class="k">Régions actives</div><div class="v">22 / 22</div></div><div class="d">↗ complet</div></div>
-      <div class="metric"><div><div class="k">Langues servies</div><div class="v">7</div></div><div class="d">↗ FR · MG · EN…</div></div>
-      <div class="metric"><div><div class="k">Engagement IA</div><div class="v">94 %</div></div><div class="d">↗ réponses utiles</div></div>
-      <div class="metric"><div><div class="k">Foulards QR vendus</div><div class="v">318</div></div><div class="d">↗ +12 / sem.</div></div>
+      <div class="data-head"><div class="avatar">D</div><h4>Data intelligence</h4><small>Live</small></div>
+      <div class="metric"><div><div class="k">Foulards scannes</div><div class="v">12 480</div></div><div class="d">+34%</div></div>
+      <div class="metric"><div><div class="k">Design marin</div><div class="v">42%</div></div><div class="d">Scans</div></div>
+      <div class="metric"><div><div class="k">Langues apprises</div><div class="v">35%</div></div><div class="d">Sessions</div></div>
+      <div class="metric"><div><div class="k">Ressources ouvertes</div><div class="v">23%</div></div><div class="d">Favoris</div></div>
+      <div class="metric"><div><div class="k">Engagement IA</div><div class="v">94%</div></div><div class="d">Utile</div></div>
     </div>
   </section>
 
-  <!-- 8 CAPABILITIES -->
   <section>
     <div class="caps-head">
       <div>
         <div class="k">Intelligence culturelle</div>
-        <h3>8 fonctionnalités IA pour <em>prolonger</em> la culture.</h3>
+        <h3>8 fonctionnalites IA pour <em>apprendre</em>, scanner et explorer.</h3>
       </div>
-      <p>Chaque interaction nourrit la mémoire vivante d'Ori'land — personnalisée, contextuelle, multilingue.</p>
+      <p>Chaque interaction relie le profil auditeur, les langues regionales, l'histoire, les ressources et les recommandations du centre de documentation.</p>
     </div>
     <div class="caps">
-      <article class="cap"><div class="cap-head"><div class="cap-ico">🪄</div><small>Création</small></div><h4>Génération de motifs</h4><p>Compositions fidèles aux régions, modernisées pour le textile.</p></article>
-      <article class="cap"><div class="cap-head"><div class="cap-ico">🧭</div><small>Personnalisation</small></div><h4>Recommandations</h4><p>L'algorithme apprend tes régions, styles, lectures.</p></article>
-      <article class="cap"><div class="cap-head"><div class="cap-ico">💬</div><small>Conversation</small></div><h4>Assistant culturel</h4><p>Dialogue libre relié aux motifs, régions et récits.</p></article>
-      <article class="cap"><div class="cap-head"><div class="cap-ico">🔍</div><small>Recherche</small></div><h4>Sémantique</h4><p>« Traditions liées au zébu » : résumés et liens régionaux.</p></article>
-      <article class="cap"><div class="cap-head"><div class="cap-ico">✍️</div><small>Storytelling</small></div><h4>Récits auto</h4><p>Fiche, contexte, histoire générés à la demande.</p></article>
-      <article class="cap"><div class="cap-head"><div class="cap-ico">📈</div><small>Data</small></div><h4>Tendances</h4><p>Régions, motifs, couleurs : guidage des collections.</p></article>
-      <article class="cap"><div class="cap-head"><div class="cap-ico">🌐</div><small>Accessibilité</small></div><h4>Traduction</h4><p>FR · MG · EN · dialectes — ton culturel préservé.</p></article>
-      <article class="cap"><div class="cap-head"><div class="cap-ico">📱</div><small>Phygital</small></div><h4>Scan augmenté</h4><p>Scanne un foulard : l'IA raconte motif et région.</p></article>
+      <article class="cap"><div class="cap-head"><div class="cap-ico">AI</div><small>Decouverte</small></div><h4>Guide culturel IA</h4><p>Comprend les envies, propose des regions, des histoires, des langues et des ressources.</p></article>
+      <article class="cap"><div class="cap-head"><div class="cap-ico">R1</div><small>Profil</small></div><h4>Recommandations</h4><p>Parcours adaptes aux lectures, styles et regions preferees.</p></article>
+      <article class="cap"><div class="cap-head"><div class="cap-ico">C1</div><small>Dialogue</small></div><h4>Assistant culturel</h4><p>Requetes naturelles, explication de motifs et guides virtuels.</p></article>
+      <article class="cap"><div class="cap-head"><div class="cap-ico">S1</div><small>Recherche</small></div><h4>Recherche semantique</h4><p>Comprend les themes et relie documents, regions et produits.</p></article>
+      <article class="cap"><div class="cap-head"><div class="cap-ico">T1</div><small>Texte</small></div><h4>Storytelling auto</h4><p>Histoires, contextes regionaux, scripts audio et fiches de ressources.</p></article>
+      <article class="cap"><div class="cap-head"><div class="cap-ico">D2</div><small>Data</small></div><h4>Tendances</h4><p>Scans, couleurs, regions consultees et ventes textiles.</p></article>
+      <article class="cap"><div class="cap-head"><div class="cap-ico">LG</div><small>Langues</small></div><h4>Apprendre les langues</h4><p>Lexique, expressions, prononciation et exercices courts par region.</p></article>
+      <article class="cap"><div class="cap-head"><div class="cap-ico">QR</div><small>Phygital</small></div><h4>Supports connectes</h4><p>Les creations physiques deviennent des portes d'entree vers l'experience IA.</p></article>
+    </div>
+  </section>
+
+  <section class="trust-band">
+    <div>
+      <div class="kicker">Base documentaire fiable</div>
+      <h3>Une IA nourrie par des ressources verifiees.</h3>
+      <p>Les reponses et recommandations d'Ori'land ne reposent pas uniquement sur l'IA. Elles s'appuient sur une base de donnees construite a partir de ressources fiables, de contenus documentaires, de validations humaines et de contributions de partenaires culturels, educatifs et institutionnels.</p>
+    </div>
+    <div class="trust-grid">
+      <div><strong>Sources documentaires</strong><span>Textes, audios, fiches, references culturelles</span></div>
+      <div><strong>Partenaires</strong><span>Acteurs culturels, educatifs, creatifs et institutionnels</span></div>
+      <div><strong>Validation humaine</strong><span>Controle du contexte, du sens et de la sensibilite culturelle</span></div>
     </div>
   </section>
 
   <section class="cta">
     <div>
-      <div class="k">Ny lova ho an'ny taranaka</div>
-      <h3>Préserver, transmettre, célébrer la culture <em>malgache</em>.</h3>
+      <div class="k">Transmission culturelle</div>
+      <h3>Preserver, expliquer et faire circuler le patrimoine avec <em>l'IA</em>.</h3>
     </div>
-    <a class="btn btn-ochre" href="scan.html">Scanner un foulard →</a>
+    <a class="btn btn-ochre" href="scan.html">Scanner un textile</a>
   </section>
-
 </main>
 
 <script src="partials.js"></script>

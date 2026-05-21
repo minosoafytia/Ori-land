@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Espace auditeur - Ori'land</title>
+<meta name="description" content="Connexion auditeur Ori'land: favoris, parcours IA, langues, scans et profil culturel." />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<main class="container">
+  <div class="page-intro">
+    <div class="k">Compte auditeur</div>
+    <h1>Un espace pour <em>suivre son parcours</em></h1>
+    <p>Les auditeurs retrouvent leurs lectures, scans, audios, langues preferees, recommandations et contenus sauvegardes.</p>
+  </div>
+
+  <section class="chat-grid">
+    <div class="data">
+      <div class="data-head"><div class="avatar">ID</div><h4>Connexion</h4><small>Securise</small></div>
+      <div class="chat-foot" style="border:0;padding:0 0 12px"><input placeholder="Email" type="email"></div>
+      <div class="chat-foot" style="border:0;padding:0 0 16px"><input placeholder="Mot de passe" type="password"></div>
+      <button class="btn btn-primary" onclick="showToast('Connexion auditeur simulee')">Entrer dans mon espace</button>
+      <button class="btn btn-ghost" style="color:var(--fg);border-color:var(--border);margin-left:8px" onclick="showToast('Lien magique envoye')">Lien magique</button>
+    </div>
+
+    <div class="data">
+      <div class="data-head"><div class="avatar">IA</div><h4>Profil culturel</h4><small>Prive</small></div>
+      <div class="metric"><div><div class="k">Articles lus</div><div class="v">47</div></div><div class="d">+12</div></div>
+      <div class="metric"><div><div class="k">Scans sauvegardes</div><div class="v">9</div></div><div class="d">QR</div></div>
+      <div class="metric"><div><div class="k">Audios ecoutes</div><div class="v">18</div></div><div class="d">Court</div></div>
+      <div class="metric"><div><div class="k">Affinite IA</div><div class="v">Mer chaude</div></div><div class="d">Reco</div></div>
+    </div>
+  </section>
+
+  <section class="feature-grid">
+    <article class="feature-card"><h3>Espace personnel</h3><p>Articles lus, audios, favoris, parcours et ressources consultees restent disponibles.</p></article>
+    <article class="feature-card"><h3>Accessibilite</h3><p>Choix de langue, textes simplifies, transcription audio et resumes courts.</p></article>
+    <article class="feature-card"><h3>Recommandations</h3><p>Le profil guide les prochains contenus, textiles et parcours immersifs.</p></article>
+  </section>
+</main>
+<script src="partials.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Centre de documentation - Ori'land</title>
+<meta name="description" content="Centre de documentation augmente par l'IA: recherche semantique, traduction, resumes et ressources d'apprentissage." />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<main class="container">
+  <div class="page-intro">
+    <div class="k">Centre de documentation</div>
+    <h1>Documentation, langues & <em>ressources</em></h1>
+    <p>Un espace pour apprendre les langues de chaque region, comprendre l'histoire, consulter les ressources et relier chaque foulard a son contexte culturel.</p>
+  </div>
+
+  <div class="topbar">
+    <div class="search">
+      <span>Search</span>
+      <input data-semantic-search placeholder="Chercher une langue, une histoire, une ressource..." />
+      <small class="ai-mark">IA</small>
+    </div>
+    <div class="top-actions">
+      <button class="icon-btn" onclick="showToast('Filtre audio applique')">AU</button>
+      <button class="icon-btn" onclick="showToast('Filtre textile applique')">TX</button>
+      <button class="icon-btn" onclick="showToast('Filtre histoire applique')">HI</button>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><span class="n">540</span><span class="l">Recits indexes</span><div class="d">Resume IA disponible</div></div>
+    <div class="stat"><span class="n">312</span><span class="l">Ressources visuelles</span><div class="d">Liees aux themes</div></div>
+    <div class="stat"><span class="n ai">128</span><span class="l">Guides audio</span><div class="d">Formats courts</div></div>
+    <div class="stat"><span class="n">64</span><span class="l">Themes documentes</span><div class="d">Parcours compatibles</div></div>
+  </div>
+
+  <div class="docs">
+    <a class="doc" href="#"><div class="icon">L1</div><div class="body"><h5>Langues regionales: premiers mots et prononciation</h5><div class="meta">Audio, lexique, exercices courts</div></div><span class="chip clay">Langues</span></a>
+    <a class="doc" href="#"><div class="icon">H1</div><div class="body"><h5>Histoire des regions et grandes periodes</h5><div class="meta">Chronologie, cartes, resumes IA</div></div><span class="chip emerald">Histoire</span></a>
+    <a class="doc" href="#"><div class="icon">A3</div><div class="body"><h5>Motifs geometriques et architecture</h5><div class="meta">Zone forestiere - contexte patrimonial - traduction</div></div><span class="chip ochre">Design</span></a>
+    <a class="doc" href="#"><div class="icon">A4</div><div class="body"><h5>Instruments et scenes populaires</h5><div class="meta">Archive sonore - version courte - parcours auditeur</div></div><span class="chip emerald">Audio</span></a>
+    <a class="doc" href="#"><div class="icon">A5</div><div class="body"><h5>Couleurs naturelles et teinture textile</h5><div class="meta">Savoir-faire - storytelling produit automatique</div></div><span class="chip clay">Savoir</span></a>
+    <a class="doc" href="#"><div class="icon">A6</div><div class="body"><h5>Symboles, formes et usages ceremoniels</h5><div class="meta">Archive reliee aux scans QR - 24 contenus lies</div></div><span class="chip ochre">Archive</span></a>
+  </div>
+
+  <section class="feature-grid">
+    <article class="feature-card"><h3>Recherche semantique</h3><p>L'utilisateur peut chercher une idee, pas seulement un mot-cle. L'IA relie themes, documentation, regions et ressources.</p></article>
+    <article class="feature-card"><h3>Traduction culturelle</h3><p>Les contenus peuvent etre adaptes en francais simple ou en anglais, avec preservation du sens.</p></article>
+    <article class="feature-card"><h3>Storytelling automatique</h3><p>Chaque nouvelle creation textile genere une fiche, un recit court et un script audio.</p></article>
+  </section>
+</main>
+<script src="partials.js"></script>
+</body>
+</html>
